@@ -1,0 +1,26 @@
+import express from "express";
+import connect from "./connect";
+import userRoutes from "./routes/user.routes";
+import documentRoutes from "./routes/document.routes";
+import commentRoutes from "./routes/comment.routes";
+import shareRoutes from "./routes/share.routes";
+
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.use(express.json());
+
+connect().then(() => {
+  app.use("/users", userRoutes);
+  app.use("/documents", documentRoutes);
+  app.use("/comments", commentRoutes);
+  app.use("/shares", shareRoutes);
+
+  app.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
+  });
+});
+
+app.get("/", (req, res) => {
+  res.send("Text editor is live");
+});

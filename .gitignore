@@ -1,0 +1,27 @@
+# Node modules
+node_modules/
+
+# TypeScript compilation output
+build/
+
+# Environment variables
+.env
+
+# IDE settings
+.vscode/
+
+# Logs
+logs/
+
+# npm debug logs
+npm-debug.log*
+
+# pnpm debug logs
+.pnpm-debug.log*
+
+# TypeScript config
+tsconfig.json
+
+# Package files
+package-lock.json
+pnpm-lock.yaml
