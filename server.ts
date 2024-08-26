@@ -4,9 +4,10 @@ import userRoutes from "./routes/user.routes";
 import documentRoutes from "./routes/document.routes";
 import commentRoutes from "./routes/comment.routes";
 import shareRoutes from "./routes/share.routes";
-
+import { PORT } from "./config/config";
 const app = express();
-const port = process.env.PORT || 3000;
+
+const port = PORT;
 
 app.use(express.json());
 

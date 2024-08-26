@@ -1,8 +1,8 @@
-import mongoose, { connection } from "mongoose";
-
+import mongoose from "mongoose";
+import { MONGO_URI } from "./config/config";
+const connectionString = MONGO_URI || "";
 const connect = async () => {
   try {
-    const connectionString = process.env.MONGO_URI || "connectionstring";
     await mongoose.connect(connectionString);
     console.log("Connected to MongoDB");
   } catch (error) {
